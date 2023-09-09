@@ -29,7 +29,11 @@ function PagesLogin() {
     event.preventDefault();
     const response = await login({ username: email, password: password });
     console.log(response, "response login");
-    if (response) setRedirect(true);
+    if (response) {
+      localStorage.setItem("token", response?.data?.token);
+      localStorage.setItem("id", response?.data?.id);
+      setRedirect(true);
+    }
   };
 
   if (redirect) {

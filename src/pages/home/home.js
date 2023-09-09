@@ -3,9 +3,11 @@ import LineChart from "../../components/shared/Charts/LineChart";
 import BasicTable from "../../components/shared/Tables/BasicTable";
 import { getData } from "../../services/Currency";
 import { Loadder } from "../../components/shared/loadders/Loadder";
+import { Navigate } from "react-router-dom";
 
 function Home() {
   const [data, setData] = useState([]);
+  const [redirect, setRedirect] = useState(false);
 
   const getPreditcions = async () => {
     const response = await getData();
@@ -16,7 +18,21 @@ function Home() {
     getPreditcions();
     // console.log(data, "data on page");
   }, []);
+  //   const isLogin = router.route == "/pages/login";
+  //   if (typeof window !== "undefined") {
+  const id = localStorage?.getItem("id");
+  const token = localStorage?.getItem("token");
+  //     // console.log(id, token, "data localstorage");
+  //     // if (!id && !token) window.location = "/auth/auth1/login" as any;
+  console.log(!id && !token, "asdasd");
 
+  //   }
+  useEffect(() => {
+    if (!id && !token) setRedirect(true);
+  }, [id, token]);
+  if (redirect) {
+    return <Navigate to="/pages/login" />;
+  }
   return (
     <>
       {data?.length > 0 ? (
