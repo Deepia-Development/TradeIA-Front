@@ -36,9 +36,9 @@ function App() {
 }
 
 root.render(
-  //   <BrowserRouter>
-  <HashRouter>
+  <BrowserRouter>
+    {/* <HashRouter> */}
     <App />
-  </HashRouter>
-  //   </BrowserRouter>
+    {/* </HashRouter> */}
+  </BrowserRouter>
 );
