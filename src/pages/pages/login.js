@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { AppSettings } from "./../../config/app-settings.js";
-import logo from "../../assets/img/logo.jpeg";
+import logo from "../../assets/img/whiteLogo.png";
 import { login } from "../../services/Auth.js";
 import { event } from "jquery";
 

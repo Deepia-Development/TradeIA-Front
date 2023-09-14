@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { slideToggle } from './../../composables/slideToggle.js';
-import logo from '../../assets/img/logo.jpeg'
+import logo from '../../assets/img/whiteLogo.png'
 
 function Header() {
 	const notificationData = [];
