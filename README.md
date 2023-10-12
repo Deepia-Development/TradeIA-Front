@@ -24,7 +24,6 @@ Los errores se muestran en consola.
 Contruye la aplicación para producción en el directorio `build`.<br>
 
 ***
-<br>
 
 ## Otros recursos
 
